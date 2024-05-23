@@ -10,7 +10,7 @@
 				var subdomain = domain.split('.')[0];
 				var lang = location.pathname.split('/').pop(); // 'es';
 				var id = location.search.split('&').shift().split('-').pop();
-				var api_url = endpoint+'/'+domain+'/'+lang+'/'+id;
+				var api_url = endpoint+'/'+domain+'/'+id;
 				console.log(api_url);
 
 				function fetchProductId(url) {
