@@ -5,11 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script>
 			(function() {
-				var endpoint = 'https://iocorthele.buytostore.com';
+				var endpoint = 'https://api.buytostore.com';
 				var domain = location.hostname;
 				var lang = location.pathname.split('/').pop(); // 'es';
 				var id = location.search.split('&').shift().split('-').pop();
-				var api_url = endpoint + '/item/' + domain + '/' + id;
+				var api_url = endpoint+'/'+domain+'/'+lang+'/'+id;
 				console.log(api_url);
 
 				function fetchProductId(url) {
@@ -29,7 +29,7 @@
 						var isBot = /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i.test(navigator.userAgent);
 						var baseUrl = 'https://fr.aliexpress.com/i/' + productId + '.html';
 						if(!id) return;
-						var redirectUrl = isBot ? baseUrl : 'https://iocorthele.buytostore.com/item/' + domain + '/' + id;
+						var redirectUrl = isBot ? baseUrl : 'https://'+domain+'/item/'+domain+'/'+id;
 						location.href = redirectUrl;
 					})
 						.catch(error => {
